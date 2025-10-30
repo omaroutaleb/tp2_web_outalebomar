@@ -33,15 +33,12 @@ public class LlmClient implements Serializable {
      * Constructeur
      * 1. Récupère la clé API
      * 2. Crée le ChatModel (instance représentant le LLM)
+     * 2. Crée le ChatModel (instance représentant le LLM)
      * 3. Crée l'assistant avec la mémoire
      */
     public LlmClient() {
         // 1. Récupération de la clé secrète depuis variable d'environnement
         String apiKey = System.getenv("GEMINI_API_KEY");
-
-        // TEMPORAIRE - Décommenter pour tester avec clé hardcodée
-        // apiKey = "AIzaSy...VOTRE_CLE_ICI";
-
         if (apiKey == null || apiKey.isBlank()) {
             throw new IllegalStateException(
                     "GEMINI_API_KEY n'est pas définie ! " +
